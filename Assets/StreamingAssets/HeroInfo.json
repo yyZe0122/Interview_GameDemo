@@ -1,0 +1,46 @@
+[
+    {
+        "heroID": 1,
+        "heroName": "骑士",
+        "STR": 30,
+        "DEX": 20,
+        "INT": 15,
+        "atkTimer": 1,
+        "skill2Timer": 3,
+        "skill3Timer": 6,
+        "skill4Timer": 10
+    },
+    {
+        "heroID": 2,
+        "heroName": "野蛮人",
+        "STR": 50,
+        "DEX": 10,
+        "INT": 5,
+        "atkTimer": 2,
+        "skill2Timer": 3,
+        "skill3Timer": 4,
+        "skill4Timer": 6
+    },
+    {
+        "heroID": 3,
+        "heroName": "法师",
+        "STR": 15,
+        "DEX": 5,
+        "INT": 40,
+        "atkTimer": 1,
+        "skill2Timer": 3,
+        "skill3Timer": 6,
+        "skill4Timer": 10
+    },
+    {
+        "heroID": 4,
+        "heroName": "游侠",
+        "STR": 15,
+        "DEX": 30,
+        "INT": 10,
+        "atkTimer": 1,
+        "skill2Timer": 3,
+        "skill3Timer": 6,
+        "skill4Timer": 10
+    }
+]

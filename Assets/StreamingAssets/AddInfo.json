@@ -1,0 +1,98 @@
+[
+    {
+        "id": 1,
+        "name": "力量1",
+        "addAtt": "STR",
+        "attMin": 1,
+        "attMax": 15,
+        "attNow": 0
+    },
+    {
+        "id": 2,
+        "name": "敏捷1",
+        "addAtt": "DEX",
+        "attMin": 1,
+        "attMax": 15,
+        "attNow": 0
+    },
+    {
+        "id": 3,
+        "name": "智力1",
+        "addAtt": "INT",
+        "attMin": 1,
+        "attMax": 15,
+        "attNow": 0
+    },
+    {
+        "id": 4,
+        "name": "力量2",
+        "addAtt": "STR",
+        "attMin": 10,
+        "attMax": 30,
+        "attNow": 0
+    },
+    {
+        "id": 5,
+        "name": "敏捷2",
+        "addAtt": "DEX",
+        "attMin": 10,
+        "attMax": 30,
+        "attNow": 0
+    },
+    {
+        "id": 6,
+        "name": "智力2",
+        "addAtt": "INT",
+        "attMin": 10,
+        "attMax": 30,
+        "attNow": 0
+    },
+    {
+        "id": 7,
+        "name": "力量3",
+        "addAtt": "STR",
+        "attMin": 20,
+        "attMax": 50,
+        "attNow": 0
+    },
+    {
+        "id": 8,
+        "name": "敏捷3",
+        "addAtt": "DEX",
+        "attMin": 20,
+        "attMax": 50,
+        "attNow": 0
+    },
+    {
+        "id": 9,
+        "name": "智力3",
+        "addAtt": "INT",
+        "attMin": 20,
+        "attMax": 50,
+        "attNow": 0
+    },
+    {
+        "id": 10,
+        "name": "力量4",
+        "addAtt": "STR",
+        "attMin": 50,
+        "attMax": 100,
+        "attNow": 0
+    },
+    {
+        "id": 11,
+        "name": "敏捷4",
+        "addAtt": "DEX",
+        "attMin": 50,
+        "attMax": 100,
+        "attNow": 0
+    },
+    {
+        "id": 12,
+        "name": "智力4",
+        "addAtt": "INT",
+        "attMin": 50,
+        "attMax": 100,
+        "attNow": 0
+    }
+]
