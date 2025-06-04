@@ -257,7 +257,7 @@ public class UIMagr : BaseManager<UIMagr>
     /// 获取面板
     /// </summary>
     /// <typeparam name="T">面板类型 要和预设体名字一致</typeparam>
-    public T GetPanel<T>(UnityAction<T> callBack) where T: BasePanel
+    public T GetPanel<T>(UnityAction<T> callBack = null) where T: BasePanel
     {
         //获取面板名
         string panelName = typeof(T).Name;

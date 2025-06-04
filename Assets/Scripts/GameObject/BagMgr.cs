@@ -27,7 +27,6 @@ public class BagMgr : BaseManager<BagMgr>
         //鼠标进入
         EventCenter.Instance.AddEventListener<ItemCall>(E_EventType.E_Bag_PointerEnter, (data) =>
         {
-            Debug.Log("鼠标进入id" + data.NowItemCallID);
             //如果在拖动 那么不需要详情面板
             if (isDrag)
             {
@@ -158,6 +157,10 @@ public class BagMgr : BaseManager<BagMgr>
                     //设置是否装备武器
                     nowInItemCall.isHaveWeapon = true;
                     playerData.isWeapon = true;
+                    //更新玩家属性
+                    GameDataMgr.Instance.ChangeHeroData(false);
+                    GameDataMgr.Instance.lastItemData = itemData;
+                    EventCenter.Instance.EventTrigger(E_EventType.E_Player_ChangeWeapon);
                 }
                 //如果不为空 那么就交换武器
                 else
@@ -166,7 +169,9 @@ public class BagMgr : BaseManager<BagMgr>
                     nowInItemCall.imageIcon.sprite = nowDragItemCall.imageIcon.sprite;
                     //交换背包中的物品数据 (析构交换)
                     (playerData.ItemDataList[nowDragItemCall.NowItemCallID], playerData.NowItemData) = (playerData.NowItemData, playerData.ItemDataList[nowDragItemCall.NowItemCallID]);
-                    
+                    GameDataMgr.Instance.ChangeHeroData(true);
+                    GameDataMgr.Instance.lastItemData = itemData;
+                    EventCenter.Instance.EventTrigger(E_EventType.E_Player_ChangeWeapon);
                 }
             }
         }

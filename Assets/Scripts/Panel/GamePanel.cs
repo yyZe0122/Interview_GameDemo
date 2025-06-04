@@ -21,6 +21,7 @@ public class GamePanel : BasePanel
     private int nowHp;
     private int nowMp;
     
+    
     public override void ShowMe()
     {
         //初始化一些对象
@@ -44,7 +45,18 @@ public class GamePanel : BasePanel
         //更新等级和金钱的面板显示数据
         txtLev.text = playerData.Lev.ToString();
         txtMoney.text = playerData.money.ToString();
-        ChangeHpMp(0,0);
+        ChangeHpMp();
+        //监听装备更新事件
+        EventCenter.Instance.AddEventListener(E_EventType.E_Player_ChangeWeapon, () =>
+        {
+            GameDataMgr.Instance.LoadHeroData();
+            heroData = GameDataMgr.Instance.heroData;
+            maxHp = heroData.STR * 2;
+            Debug.Log(maxHp);
+            maxMp = heroData.INT * 2;
+            Debug.Log(maxMp);
+            ChangeHpMp();
+        });
         //监听怪物死亡事件
         EventCenter.Instance.AddEventListener(E_EventType.E_Monster_Dead, () =>
         {
@@ -54,13 +66,13 @@ public class GamePanel : BasePanel
         //监听玩家受伤事件
         EventCenter.Instance.AddEventListener<int>(E_EventType.E_Player_Hit, (hp) =>
         {
-            ChangeHpMp(hp,0);
+            ChangeHpMp(hp);
         });
     }
     
     public override void HideMe()
     {
-
+        
     } 
 
     /// <summary>
@@ -74,7 +86,7 @@ public class GamePanel : BasePanel
     /// <summary>
     /// 玩家更新血量和魔法值
     /// </summary>
-    private void ChangeHpMp(int hitHp,int hitMp)
+    public void ChangeHpMp(int hitHp = 0,int hitMp = 0)
     {
         nowHp -= hitHp;
         nowMp -= hitMp;

@@ -28,9 +28,9 @@ public enum E_EventType
     E_Player_Hit,
     
     /// <summary>
-    /// 玩家获得奖励 参数:int
+    /// 玩家更新装备 参数:int
     /// </summary>
-    E_Player_GetReward,
+    E_Player_ChangeWeapon,
     
     /// <summary>
     /// 场景加载时进度变化

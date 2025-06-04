@@ -46,8 +46,6 @@ public class RolePanel : BasePanel
         ChangeAttPanel();
         //更新背包格子
         ChangeItemCall();
-        //更新装备界面
-        //ImageWeapon();
     }
 
     public override void HideMe()
@@ -67,6 +65,7 @@ public class RolePanel : BasePanel
         if (!playerData.isWeapon)
         {
             heroAttInfo = CalculateAttTools.Instance.CalculateAtt(heroData.STR, heroData.DEX, heroData.INT);
+            Debug.Log("玩家没有装备武器");
         }
         else
         {
@@ -110,7 +109,6 @@ public class RolePanel : BasePanel
             //清空
             itemCallList.Clear();
         }
-        print("背包格子数量" + playerData.ItemDataList.Count);
         //动态创建创建新的格子
         for (int i = 0; i < playerData.ItemDataList.Count; i++)
         {

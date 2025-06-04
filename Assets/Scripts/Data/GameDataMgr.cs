@@ -29,9 +29,8 @@ public class GameDataMgr : BaseManager<GameDataMgr>
     public List<ItemData> itemDataList = new List<ItemData>();
     //现在的玩家数据
     public PlayerData playerData;
-    //当前选择的背包物品ID
-    public int nowBagID;
-    public Dictionary<int,int> nowBagIDDic;
+    //玩家的上一个武器数据
+    public ItemData lastItemData = new ItemData();
     //当前生成的玩家对象
     public GameObject player;
     
@@ -98,6 +97,43 @@ public class GameDataMgr : BaseManager<GameDataMgr>
     }
     
     /// <summary>
+    /// 更新已经游玩的玩家英雄数据
+    /// </summary>
+    public void ChangeHeroData(bool isNowHaveWeapon)
+    {
+        if (isNowHaveWeapon)
+        {
+            //减去上一个的装备数据
+            switch (lastItemData.addData.addAtt)
+            {
+                case "STR":
+                    heroData.STR -= lastItemData.addData.attNow;
+                    break;
+                case "DEX":
+                    heroData.DEX -= lastItemData.addData.attNow;
+                    break;
+                case "INT":
+                    heroData.INT -= lastItemData.addData.attNow;
+                    break;
+            }
+        }
+        //更新玩家选择的英雄数据
+        switch (playerData.NowItemData.addData.addAtt)
+        {
+            case "STR":
+                heroData.STR += playerData.NowItemData.addData.attNow;
+                break;
+            case "DEX":
+                heroData.DEX += playerData.NowItemData.addData.attNow;
+                break;
+            case "INT":
+                heroData.INT += playerData.NowItemData.addData.attNow;
+                break;
+        }
+        SaveHeroData();
+    }
+    
+    /// <summary>
     /// 存储玩家游玩过的英雄数据
     /// </summary>
     public void SaveHeroData()
@@ -145,6 +181,7 @@ public class GameDataMgr : BaseManager<GameDataMgr>
     {
         playerData.Lev = 1;
         playerData.money = 0;
+        playerData.isWeapon = false;
         playerData.NowItemData = new ItemData();
         playerData.ItemDataList.Clear();
         SavePlayerData();

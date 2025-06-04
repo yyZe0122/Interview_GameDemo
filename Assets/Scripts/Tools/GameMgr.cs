@@ -27,7 +27,6 @@ public class GameMgr : SingleAutoMono<GameMgr>
     public void InstantiatePlayerObj()
     {
         heroInfo = GameDataMgr.Instance.heroData;
-        Debug.Log(heroInfo.heroID);
         heroPos = GameObject.Find("HeroPos").transform;
         //生成玩家对象 并且将主摄像机的目标传过去
         ABResMgr.Instance.LoadResAsync<GameObject>("hero",heroInfo.heroID.ToString(), (obj) =>
