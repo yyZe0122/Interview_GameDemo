@@ -146,16 +146,16 @@ public class AtkOrHit : SingleAutoMono<AtkOrHit>
             switch (heroInfo.heroID)
             {
                 case 1:
-                    print("使用了技能1");
+                    print("使用了技能2");
                     break;
                 case 2:
-                    print("使用了技能1");
+                    print("使用了技能2");
                     break;
                 case 3:
-                    print("使用了技能1");
+                    print("使用了技能2");
                     break;
                 case 4:
-                    print("使用了技能1");
+                    print("使用了技能2");
                     break;
             }
         });
@@ -167,21 +167,21 @@ public class AtkOrHit : SingleAutoMono<AtkOrHit>
     /// <param name="obj"></param>
     public void Skill3()
     {
-        EventCenter.Instance.AddEventListener(E_EventType.E_Input_Skill2, () =>
+        EventCenter.Instance.AddEventListener(E_EventType.E_Input_Skill3, () =>
         {
             switch (heroInfo.heroID)
             {
                 case 1:
-                    print("使用了技能1");
+                    print("使用了技能3");
                     break;
                 case 2:
-                    print("使用了技能1");
+                    print("使用了技能3");
                     break;
                 case 3:
-                    print("使用了技能1");
+                    print("使用了技能3");
                     break;
                 case 4:
-                    print("使用了技能1");
+                    print("使用了技能3");
                     break;
             }
         });
@@ -193,21 +193,21 @@ public class AtkOrHit : SingleAutoMono<AtkOrHit>
     /// <param name="obj"></param>
     public void Skill4()
     {
-        EventCenter.Instance.AddEventListener(E_EventType.E_Input_Skill2, () =>
+        EventCenter.Instance.AddEventListener(E_EventType.E_Input_Skill4, () =>
         {
             switch (heroInfo.heroID)
             {
                 case 1:
-                    print("使用了技能1");
+                    print("使用了技能4");
                     break;
                 case 2:
-                    print("使用了技能1");
+                    print("使用了技能4");
                     break;
                 case 3:
-                    print("使用了技能1");
+                    print("使用了技能4");
                     break;
                 case 4:
-                    print("使用了技能1");
+                    print("使用了技能4");
                     break;
             }
         });
